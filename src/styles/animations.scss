@@ -1,0 +1,58 @@
+// Animation for component transitions
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// Back to top button styles
+.vertex-back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-dark 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  svg {
+    stroke: white;
+  }
+}
+
+// Component transition animation
+.vertex-showcase-section {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+// Smooth hover effect for navigation items
+.vertex-nav-list li {
+  transition: transform 0.3s ease, background 0.2s ease, color 0.2s ease, border 0.2s ease;
+  
+  &:hover {
+    transform: translateX(4px);
+  }
+}
+
+// Smooth transition for showcase cards
+.vertex-showcase-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+  }
+}

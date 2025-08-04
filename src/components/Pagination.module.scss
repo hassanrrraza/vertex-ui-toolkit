@@ -1,0 +1,42 @@
+@import '../styles/_variables.scss';
+
+.pagination-demo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+.pagination-preview {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-height: 3em;
+}
+.vertex-pagination {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.vertex-pagination button {
+  background: $color-surface-alt;
+  color: $color-highlight;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: 0.4em 1em;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.13s, color 0.13s, border 0.13s;
+}
+.vertex-pagination button.active, .vertex-pagination button:focus {
+  background: $color-primary;
+  color: #fff;
+  border: 1.5px solid $color-primary-dark;
+  outline: none;
+}
+.vertex-pagination button:disabled {
+  background: $color-border;
+  color: $color-muted;
+  cursor: not-allowed;
+  border: 1px solid $color-border;
+} 

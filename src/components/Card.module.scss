@@ -1,0 +1,315 @@
+@import '../styles/_variables.scss';
+
+/* Enhanced Card Component */
+.vertex-card {
+  background: #ffffff;
+  border-radius: $radius-xl;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 400px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  
+  /* Subtle gradient overlay */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    z-index: 1;
+  }
+}
+
+/* Card Variants */
+.vertex-card--elevated {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  &:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.vertex-card--interactive {
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+.vertex-card--outlined {
+  border: 2px solid $color-neutral-200;
+  box-shadow: none;
+  
+  &:hover {
+    border-color: $color-primary-300;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Card Header */
+.vertex-card__header {
+  padding: 1.5rem 1.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.vertex-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $color-neutral-900;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.4;
+  
+  /* Gradient text effect for special cards */
+  .vertex-card--featured & {
+    background: linear-gradient(135deg, $color-primary-600, $color-primary-400);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.vertex-card__subtitle {
+  font-size: 0.875rem;
+  color: $color-neutral-600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Card Media */
+.vertex-card__media {
+  position: relative;
+  overflow: hidden;
+  background: $color-neutral-100;
+}
+
+.vertex-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  
+  .vertex-card:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.vertex-card__overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+.vertex-card__badge {
+  background: linear-gradient(135deg, $color-primary-500 0%, $color-primary-600 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: $radius-full;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  /* Badge variants */
+  &--success {
+    background: linear-gradient(135deg, $color-success-500 0%, $color-success-600 100%);
+  }
+  
+  &--warning {
+    background: linear-gradient(135deg, $color-warning-500 0%, $color-warning-600 100%);
+  }
+  
+  &--danger {
+    background: linear-gradient(135deg, $color-danger-500 0%, $color-danger-600 100%);
+  }
+}
+
+/* Card Content */
+.vertex-card__content {
+  padding: 1rem 1.5rem;
+}
+
+.vertex-card__content p {
+  color: $color-neutral-700;
+  line-height: 1.6;
+  margin: 0;
+  
+  /* Multi-line text truncation */
+  &.vertex-card__text--truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Card Actions */
+.vertex-card__actions {
+  padding: 0 1.5rem 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  
+  /* Justify actions */
+  &--center {
+    justify-content: center;
+  }
+  
+  &--end {
+    justify-content: flex-end;
+  }
+  
+  &--between {
+    justify-content: space-between;
+  }
+}
+
+.vertex-card__actions--header {
+  margin-left: auto;
+}
+
+/* Card Avatar and Meta */
+.vertex-card__avatar {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.vertex-card__avatar img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Online indicator */
+.vertex-card__avatar--online::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: $color-success-500;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.vertex-card__meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.vertex-card__menu-btn {
+  background: none;
+  border: none;
+  color: $color-neutral-500;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: $radius-md;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: $color-neutral-100;
+    color: $color-neutral-700;
+  }
+  
+  &:active {
+    background: $color-neutral-200;
+  }
+}
+
+/* Card Footer */
+.vertex-card__footer {
+  padding: 1rem 1.5rem;
+  background: $color-neutral-50;
+  border-top: 1px solid $color-neutral-200;
+  
+  .vertex-card__stats {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .vertex-card__stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: $color-neutral-600;
+    
+    .vertex-card__stat-icon {
+      width: 1rem;
+      height: 1rem;
+      opacity: 0.7;
+    }
+  }
+}
+
+/* Loading State */
+.vertex-card--loading {
+  pointer-events: none;
+  
+  .vertex-card__content {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+      animation: vertex-shimmer 1.5s infinite;
+    }
+  }
+}
+
+@keyframes vertex-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .vertex-card {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .vertex-card__header {
+    padding: 1rem 1rem 0;
+  }
+  
+  .vertex-card__content {
+    padding: 0.75rem 1rem;
+  }
+  
+  .vertex-card__actions {
+    padding: 0 1rem 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    
+    .vertex-btn {
+      width: 100%;
+      margin: 0;
+    }
+  }
+} 

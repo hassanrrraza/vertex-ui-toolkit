@@ -1,0 +1,33 @@
+@import '../styles/_variables.scss';
+
+.avatar-demo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+.avatar-preview {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.vertex-avatar {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: $color-border;
+  color: $color-highlight;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 3rem;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  transition: background 0.13s, color 0.13s;
+}
+.vertex-avatar--initials {
+  background: $color-primary;
+  color: #fff;
+} 

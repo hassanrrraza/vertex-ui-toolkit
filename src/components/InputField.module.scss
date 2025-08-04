@@ -1,0 +1,406 @@
+@import '../styles/_variables.scss';
+
+/* Enhanced Input Field Component */
+.input-demo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.input-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Input Group */
+.vertex-input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Input Label */
+.vertex-input-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $color-neutral-700;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+/* Base Input Styles */
+.vertex-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid $color-neutral-300;
+  border-radius: $radius-lg;
+  background: #ffffff;
+  color: $color-neutral-900;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  
+  &::placeholder {
+    color: $color-neutral-400;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: $color-primary-500;
+    box-shadow: 0 0 0 3px rgba($color-primary-500, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  &:hover:not(:focus):not(:disabled) {
+    border-color: $color-neutral-400;
+  }
+  
+  &:disabled {
+    background: $color-neutral-50;
+    color: $color-neutral-400;
+    cursor: not-allowed;
+    border-color: $color-neutral-200;
+    
+    &::placeholder {
+      color: $color-neutral-300;
+    }
+  }
+}
+
+/* Input States */
+.vertex-input--success {
+  border-color: $color-success-500;
+  
+  &:focus {
+    border-color: $color-success-600;
+    box-shadow: 0 0 0 3px rgba($color-success-500, 0.1);
+  }
+}
+
+.vertex-input--error {
+  border-color: $color-danger-500;
+  
+  &:focus {
+    border-color: $color-danger-600;
+    box-shadow: 0 0 0 3px rgba($color-danger-500, 0.1);
+  }
+}
+
+.vertex-input--warning {
+  border-color: $color-warning-500;
+  
+  &:focus {
+    border-color: $color-warning-600;
+    box-shadow: 0 0 0 3px rgba($color-warning-500, 0.1);
+  }
+}
+
+/* Floating Label */
+.vertex-input-group--floating {
+  position: relative;
+}
+
+.vertex-input--floating {
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  
+  &::placeholder {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  &:focus::placeholder {
+    opacity: 1;
+  }
+}
+
+.vertex-input-label--floating {
+  position: absolute;
+  left: 1rem;
+  top: 0.75rem;
+  font-size: 1rem;
+  color: $color-neutral-400;
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left top;
+  background: white;
+  padding: 0 0.25rem;
+  margin-left: -0.25rem;
+}
+
+.vertex-input--floating:focus + .vertex-input-label--floating,
+.vertex-input--floating:not(:placeholder-shown) + .vertex-input-label--floating {
+  transform: translateY(-1.25rem) scale(0.75);
+  color: $color-primary-600;
+  font-weight: 500;
+}
+
+.vertex-input--floating.vertex-input--error:focus + .vertex-input-label--floating,
+.vertex-input--floating.vertex-input--error:not(:placeholder-shown) + .vertex-input-label--floating {
+  color: $color-danger-600;
+}
+
+.vertex-input--floating.vertex-input--success:focus + .vertex-input-label--floating,
+.vertex-input--floating.vertex-input--success:not(:placeholder-shown) + .vertex-input-label--floating {
+  color: $color-success-600;
+}
+
+/* Input with Icons */
+.vertex-input-group--with-icon {
+  position: relative;
+}
+
+.vertex-input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: $color-neutral-400;
+  pointer-events: none;
+  z-index: 1;
+  transition: color 0.2s ease;
+}
+
+.vertex-input-icon--left {
+  left: 0.75rem;
+}
+
+.vertex-input-icon--right {
+  right: 0.75rem;
+}
+
+.vertex-input--with-icon-left {
+  padding-left: 2.75rem;
+}
+
+.vertex-input--with-icon-right {
+  padding-right: 2.75rem;
+}
+
+.vertex-input:focus ~ .vertex-input-icon {
+  color: $color-primary-500;
+}
+
+/* Search Input */
+.vertex-input--search {
+  border-radius: $radius-full;
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
+  
+  &:focus {
+    transform: none;
+  }
+}
+
+.vertex-input-clear {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: $color-neutral-400;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover {
+    background: $color-neutral-100;
+    color: $color-neutral-600;
+  }
+  
+  &:active {
+    background: $color-neutral-200;
+  }
+}
+
+/* Password Input */
+.vertex-input-group--password {
+  position: relative;
+}
+
+.vertex-input--password {
+  padding-right: 2.75rem;
+}
+
+.vertex-input-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: $color-neutral-400;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: $radius-md;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: $color-neutral-100;
+    color: $color-neutral-600;
+  }
+  
+  &:active {
+    background: $color-neutral-200;
+  }
+}
+
+.vertex-input-toggle-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Textarea */
+.vertex-input--textarea {
+  resize: vertical;
+  min-height: 6rem;
+  line-height: 1.6;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  
+  &:focus {
+    transform: none;
+  }
+}
+
+/* Helper Text */
+.vertex-input-helper {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: $color-neutral-600;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.vertex-input-helper--success {
+  color: $color-success-600;
+}
+
+.vertex-input-helper--error {
+  color: $color-danger-600;
+}
+
+.vertex-input-helper--warning {
+  color: $color-warning-600;
+}
+
+/* Input Sizes */
+.vertex-input--sm {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  
+  &.vertex-input--with-icon-left {
+    padding-left: 2.25rem;
+  }
+  
+  &.vertex-input--with-icon-right {
+    padding-right: 2.25rem;
+  }
+  
+  .vertex-input-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.vertex-input--lg {
+  padding: 1rem 1.25rem;
+  font-size: 1.125rem;
+  
+  &.vertex-input--with-icon-left {
+    padding-left: 3.25rem;
+  }
+  
+  &.vertex-input--with-icon-right {
+    padding-right: 3.25rem;
+  }
+  
+  .vertex-input-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+/* Input Group Variants */
+.vertex-input-group--inline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  
+  .vertex-input-label {
+    margin-bottom: 0;
+    white-space: nowrap;
+    min-width: fit-content;
+  }
+  
+  .vertex-input {
+    margin-bottom: 0;
+  }
+}
+
+/* Focus Within Group */
+.vertex-input-group:focus-within {
+  .vertex-input-label {
+    color: $color-primary-600;
+  }
+  
+  .vertex-input-icon {
+    color: $color-primary-500;
+  }
+}
+
+/* Error State Group */
+.vertex-input-group--error {
+  .vertex-input-label {
+    color: $color-danger-600;
+  }
+  
+  .vertex-input-icon {
+    color: $color-danger-500;
+  }
+}
+
+/* Success State Group */
+.vertex-input-group--success {
+  .vertex-input-label {
+    color: $color-success-600;
+  }
+  
+  .vertex-input-icon {
+    color: $color-success-500;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .vertex-input-group {
+    max-width: 100%;
+  }
+  
+  .vertex-input {
+    font-size: 1rem; // Prevent zoom on iOS
+  }
+  
+  .vertex-input-group--inline {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+} 

@@ -1,0 +1,109 @@
+.vertex-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vertex-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+}
+
+.vertex-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  top: 2.5rem;
+  width: 2px;
+  height: calc(100% + 1rem);
+  background: #e0e6ed;
+}
+
+.vertex-step--completed::after {
+  background: #8BBEB2;
+}
+
+.vertex-step--active::after {
+  background: linear-gradient(to bottom, #8BBEB2 50%, #e0e6ed 50%);
+}
+
+.vertex-step-indicator {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: #e0e6ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+  position: relative;
+}
+
+.vertex-step--completed .vertex-step-indicator {
+  background: #8BBEB2;
+  color: #fff;
+}
+
+.vertex-step--active .vertex-step-indicator {
+  background: #384E77;
+  color: #fff;
+}
+
+.vertex-step-number {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.vertex-step-content {
+  flex: 1;
+  padding-top: 0.25rem;
+}
+
+.vertex-step-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0D0630;
+}
+
+.vertex-step--completed .vertex-step-title {
+  color: #8BBEB2;
+}
+
+.vertex-step--active .vertex-step-title {
+  color: #384E77;
+}
+
+.vertex-step-description {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+@media (min-width: 768px) {
+  .vertex-stepper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .vertex-step {
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .vertex-step:not(:last-child)::after {
+    left: calc(50% + 1.25rem);
+    top: 1.25rem;
+    width: calc(100% - 2.5rem);
+    height: 2px;
+  }
+  
+  .vertex-step--active::after {
+    background: linear-gradient(to right, #8BBEB2 50%, #e0e6ed 50%);
+  }
+}

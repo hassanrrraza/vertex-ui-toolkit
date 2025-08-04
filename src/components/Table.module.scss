@@ -1,0 +1,36 @@
+@import '../styles/_variables.scss';
+
+.table-demo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+.table-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+.vertex-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: $color-surface;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: 0 1px 4px $color-shadow;
+}
+.vertex-table th, .vertex-table td {
+  padding: 0.75em 1em;
+  text-align: left;
+  border-bottom: 1px solid $color-border;
+  font-size: 1rem;
+}
+.vertex-table th {
+  background: $color-surface-alt;
+  color: $color-highlight;
+  font-weight: 600;
+}
+.vertex-table tr:last-child td {
+  border-bottom: none;
+} 

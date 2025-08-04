@@ -1,0 +1,521 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+// Timeline Demo Component Styles
+// -----------------------------
+// This module styles the Timeline demo component, providing a comprehensive
+// showcase of the Timeline component's features and variants.
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+  max-inline-size: $container-lg;
+  margin: 0 auto;
+  padding: $space-6;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  
+  @include screen-sm {
+    padding: $space-8;
+  }
+}
+
+.header {
+  margin-block-end: $space-6;
+  
+  .title {
+    @include text-2xl;
+    font-weight: $font-weight-bold;
+    color: var(--color-text);
+    margin-block: 0 0 $space-2;
+  }
+  
+  .description {
+    @include text-base;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: $leading-relaxed;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  margin-block-end: $space-6;
+  padding-block-end: $space-4;
+  border-block-end: 1px solid var(--color-border);
+  
+  @include screen-md {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .controlGroup {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+    
+    @include screen-sm {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  
+  .controlLabel {
+    @include text-sm;
+    font-weight: $font-weight-medium;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+.variantSelector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+  
+  @include screen-sm {
+    flex-wrap: nowrap;
+  }
+
+.variantButton {
+  @include button-reset;
+  @include text-sm;
+  padding: $space-2 $space-3;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-secondary);
+  transition: all $transition-duration $transition-timing;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  white-space: nowrap;
+  flex: 1 1 auto;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--color-surface-hover);
+    color: var(--color-text);
+  }
+
+  &[aria-pressed='true'] {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+    font-weight: $font-weight-medium;
+  }
+  
+  @include screen-sm {
+    flex: 0 1 auto;
+  }
+
+.tabs {
+  display: flex;
+  gap: $space-1;
+  background-color: var(--color-surface-alt);
+  padding: $space-1;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  max-inline-size: 100%;
+  overflow-x: auto;
+  
+  @include scrollbar-styles;
+  
+  @include screen-sm {
+    gap: $space-2;
+  }
+
+.tab {
+  @include button-reset;
+  @include text-sm;
+  padding: $space-2 $space-4;
+  border-radius: calc(var(--radius-md) - 2px);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all $transition-duration $transition-timing;
+  white-space: nowrap;
+  position: relative;
+  
+  &[role='tab'] {
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  &:hover {
+    color: var(--color-text);
+  }
+
+  &[aria-selected='true'] {
+    background-color: var(--color-white);
+    color: var(--color-text);
+    box-shadow: var(--shadow-xs);
+    font-weight: $font-weight-medium;
+  }
+  
+  // Focus styles for keyboard navigation
+  &:focus-visible {
+    @include focus-outline;
+    z-index: 1;
+  }
+
+// Main demo area with preview and code tabs
+.demoArea {
+  min-block-size: 300px;
+  margin-block-end: $space-8;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  
+  // Tab panel styles
+  &[role='tabpanel'] {
+    outline: none;
+    
+    &:focus-visible {
+      @include focus-outline;
+    }
+  }
+
+// Preview section styles
+.preview {
+  padding: 0;
+  background-color: var(--color-surface);
+  
+  .previewHeader {
+    padding: $space-4 $space-6 0;
+    margin-block-end: $space-4;
+    
+    .previewTitle {
+      @include text-lg;
+      font-weight: $font-weight-semibold;
+      color: var(--color-text);
+      margin: 0;
+    }
+  }
+  
+  .previewContent {
+    padding: 0 $space-6 $space-6;
+  }
+  
+  // Timeline preview specific styles
+  .timelinePreview {
+    background-color: var(--color-surface);
+    padding: $space-4;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+// Code block styles
+.codeBlock {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  background-color: var(--color-code-bg);
+  border: none;
+  
+  .codeHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $space-3 $space-4;
+    background-color: var(--color-surface-alt);
+    border-block-end: 1px solid var(--color-border);
+    
+    .codeLanguage {
+      @include text-sm;
+      font-family: $font-mono;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: $font-weight-medium;
+    }
+  }
+  
+  .codeElement {
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    
+    pre {
+      margin: 0;
+      padding: $space-4 !important;
+      background: transparent !important;
+    }
+  }
+
+.copyButton {
+  position: relative;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  z-index: 1;
+  margin: 0;
+  padding: $space-1 $space-2;
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all $transition-duration $transition-timing;
+  
+  &:hover {
+    background-color: var(--color-surface-hover);
+    color: var(--color-text);
+  }
+  
+  &:focus-visible {
+    @include focus-outline;
+  }
+
+// Variants section
+.variants {
+  margin-block-start: $space-8;
+  padding-block-start: $space-6;
+  border-block-start: 1px solid var(--color-border);
+  
+  .variantsTitle {
+    @include text-xl;
+    font-weight: $font-weight-semibold;
+    color: var(--color-text);
+    margin-block: 0 $space-3;
+  }
+  
+  .variantsDescription {
+    @include text-base;
+    color: var(--color-text-secondary);
+    margin-block: 0 $space-4;
+    line-height: $leading-relaxed;
+  }
+
+// Variant grid layout
+.variantGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-6;
+  
+  @include screen-sm {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+  
+  @include screen-lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Variant card styles
+.variantCard {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  padding: $space-5;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  transition: transform $transition-duration $transition-timing, 
+              box-shadow $transition-duration $transition-timing,
+              border-color $transition-duration $transition-timing;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-border-hover);
+  }
+  
+  .variantName {
+    @include text-base;
+    font-weight: $font-weight-semibold;
+    color: var(--color-text);
+    margin: 0;
+  }
+  
+  .variantPreview {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-surface-alt);
+    padding: $space-4;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    
+    .timelinePreview {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: transparent;
+    }
+  }
+
+.variantCard {
+  padding: $space-4;
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.variantName {
+  @include text-base;
+  font-weight: $font-weight-medium;
+  color: var(--color-text);
+  margin-top: 0;
+  margin-bottom: $space-3;
+}
+
+.variantPreview {
+  background-color: var(--color-surface);
+  padding: $space-4;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+// Usage section
+.usage {
+  margin-block-start: $space-8;
+  padding-block-start: $space-6;
+  border-block-start: 1px solid var(--color-border);
+  
+  .usageTitle {
+    @include text-xl;
+    font-weight: $font-weight-semibold;
+    color: var(--color-text);
+    margin-block: 0 $space-3;
+  }
+  
+  .usageDescription {
+    @include text-base;
+    color: var(--color-text-secondary);
+    margin-block: 0 $space-4;
+    line-height: $leading-relaxed;
+  }
+  
+  .usageSubtitle {
+    @include text-lg;
+    font-weight: $font-weight-semibold;
+    color: var(--color-text);
+    margin-block: $space-6 $space-3;
+  }
+  
+  // Props table styles
+  .propsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: $space-4;
+    font-size: $text-sm;
+    
+    .propsHeader,
+    .propRow {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 2fr;
+      gap: $space-4;
+      padding: $space-3 $space-4;
+      align-items: start;
+      
+      @include screen-sm {
+        grid-template-columns: 1.5fr 1fr 1fr 2fr;
+      }
+    }
+    
+    .propsHeader {
+      background-color: var(--color-surface-alt);
+      border-radius: var(--radius-sm);
+      font-weight: $font-weight-medium;
+      color: var(--color-text);
+    }
+    
+    .propRow {
+      border-block-end: 1px solid var(--color-border);
+      
+      &:last-child {
+        border-block-end: none;
+      }
+      
+      &:hover {
+        background-color: var(--color-surface-hover);
+      }
+    }
+    
+    .propName {
+      font-family: $font-mono;
+      color: var(--color-primary);
+    }
+    
+    .propType {
+      font-family: $font-mono;
+      color: var(--color-accent);
+    }
+    
+    .propDefault {
+      font-family: $font-mono;
+      color: var(--color-text-secondary);
+      
+      em {
+        color: var(--color-danger);
+        font-style: normal;
+      }
+    }
+    
+    .propDescription {
+      color: var(--color-text-secondary);
+      line-height: $leading-relaxed;
+    }
+  }
+}
+
+// Responsive adjustments
+@include screen-sm {
+  .variantCard {
+    padding: $space-6;
+  }
+}
+
+@include screen-md {
+  .variantGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include screen-lg {
+  .variantGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Dark mode overrides
+@media (prefers-color-scheme: dark) {
+  .variantButton {
+    &:hover {
+      background-color: var(--color-surface-hover);
+    }
+    
+    &[aria-pressed='true'] {
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+  }
+  
+  .tab[aria-selected='true'] {
+    background-color: var(--color-surface);
+  }
+  
+  .variantCard {
+    background-color: var(--color-surface-alt);
+    
+    .variantPreview {
+      background-color: var(--color-surface);
+    }
+  }
+}

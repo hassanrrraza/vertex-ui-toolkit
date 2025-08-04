@@ -1,0 +1,45 @@
+@import '../styles/_variables.scss';
+
+.list-demo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+.list-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+.vertex-list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vertex-list-group li {
+  background: $color-surface-alt;
+  color: $color-highlight;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: 0.75em 1.25em;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.13s, color 0.13s, border 0.13s;
+  cursor: pointer;
+}
+.vertex-list-group li.active, .vertex-list-group li:focus {
+  background: $color-primary;
+  color: #fff;
+  border: 1.5px solid $color-primary-dark;
+  outline: none;
+}
+.vertex-list-group li[disabled] {
+  background: $color-border;
+  color: $color-muted;
+  cursor: not-allowed;
+  border: 1px solid $color-border;
+} 

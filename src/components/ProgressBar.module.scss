@@ -1,0 +1,30 @@
+@import '../styles/_variables.scss';
+
+.progress-demo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+.progress-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: stretch;
+  min-width: 0;
+}
+.vertex-progress {
+  width: 100%;
+  background: $color-border;
+  border-radius: $radius-md;
+  height: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 1px 4px $color-shadow;
+}
+.vertex-progress-bar {
+  height: 100%;
+  background: $color-primary;
+  width: 60%;
+  border-radius: $radius-md 0 0 $radius-md;
+  transition: width 0.3s;
+} 

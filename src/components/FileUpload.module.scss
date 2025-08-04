@@ -1,0 +1,103 @@
+.vertex-file-upload {
+  width: 100%;
+}
+
+.vertex-file-drop-zone {
+  border: 2px dashed #e0e6ed;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.vertex-file-drop-zone:hover,
+.vertex-file-drop-zone--dragover {
+  border-color: #8BBEB2;
+  background: #f8fffe;
+}
+
+.vertex-file-drop-zone--dragover {
+  border-color: #384E77;
+  background: #f5f7ff;
+}
+
+.vertex-file-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.vertex-file-text {
+  margin: 0 0 0.5rem 0;
+  color: #0D0630;
+  font-size: 1rem;
+}
+
+.vertex-file-text strong {
+  color: #384E77;
+}
+
+.vertex-file-hint {
+  margin: 0;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.vertex-file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.vertex-file-list {
+  margin-top: 1rem;
+}
+
+.vertex-file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border: 1px solid #e0e6ed;
+  border-radius: 0.375rem;
+  margin-bottom: 0.5rem;
+  background: #fff;
+}
+
+.vertex-file-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.vertex-file-name {
+  font-weight: 500;
+  color: #0D0630;
+}
+
+.vertex-file-size {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.vertex-file-remove {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: background 0.2s ease;
+}
+
+.vertex-file-remove:hover {
+  background: #f8f9fa;
+  color: #dc3545;
+}

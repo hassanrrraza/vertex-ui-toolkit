@@ -1,0 +1,53 @@
+.vertex-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.vertex-star {
+  font-size: 1.5rem;
+  color: #e0e6ed;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  user-select: none;
+}
+
+.vertex-star:hover,
+.vertex-star--hover {
+  color: #ffc107;
+}
+
+.vertex-star--filled {
+  color: #ffc107;
+}
+
+.vertex-star--half {
+  background: linear-gradient(90deg, #ffc107 50%, #e0e6ed 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vertex-rating--sm .vertex-star {
+  font-size: 1rem;
+}
+
+.vertex-rating--lg .vertex-star {
+  font-size: 2rem;
+}
+
+.vertex-rating--readonly .vertex-star {
+  cursor: default;
+}
+
+.vertex-rating-text {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.vertex-rating:focus-within {
+  outline: 2px solid #8BBEB2;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}

@@ -1,0 +1,238 @@
+// ==========================================
+// === Vertex UI Design System Tokens ===
+// ==========================================
+
+// ===== Color System =====
+// Primary Colors
+$color-primary-50: #f0f4ff;
+$color-primary-100: #dbe8fe;
+$color-primary-200: #bfd7fe;
+$color-primary-300: #93bbfd;
+$color-primary-400: #6094fa;
+$color-primary-500: #3b82f6; // Base primary
+$color-primary-600: #2563eb;
+$color-primary-700: #1d4ed8;
+$color-primary-800: #1e40af;
+$color-primary-900: #1e3a8a;
+$color-primary-950: #172554;
+
+// Secondary/Accent Colors
+$color-secondary-50: #f0fdfa;
+$color-secondary-100: #ccfbf1;
+$color-secondary-200: #99f6e4;
+$color-secondary-300: #5eead4;
+$color-secondary-400: #2dd4bf;
+$color-secondary-500: #14b8a6; // Base secondary
+$color-secondary-600: #0d9488;
+$color-secondary-700: #0f766e;
+$color-secondary-800: #115e59;
+$color-secondary-900: #134e4a;
+$color-secondary-950: #042f2e;
+
+// Neutral Colors
+$color-neutral-50: #f8fafc;
+$color-neutral-100: #f1f5f9;
+$color-neutral-200: #e2e8f0;
+$color-neutral-300: #cbd5e1;
+$color-neutral-400: #94a3b8;
+$color-neutral-500: #64748b;
+$color-neutral-600: #475569;
+$color-neutral-700: #334155;
+$color-neutral-800: #1e293b;
+$color-neutral-900: #0f172a;
+$color-neutral-950: #020617;
+
+// Semantic Colors
+// Success
+$color-success-50: #f0fdf4;
+$color-success-100: #dcfce7;
+$color-success-200: #bbf7d0;
+$color-success-300: #86efac;
+$color-success-400: #4ade80;
+$color-success-500: #22c55e;
+$color-success-600: #16a34a;
+$color-success-700: #15803d;
+$color-success-800: #166534;
+$color-success-900: #14532d;
+
+// Warning
+$color-warning-50: #fffbeb;
+$color-warning-100: #fef3c7;
+$color-warning-200: #fde68a;
+$color-warning-300: #fcd34d;
+$color-warning-400: #fbbf24;
+$color-warning-500: #f59e0b;
+$color-warning-600: #d97706;
+$color-warning-700: #b45309;
+$color-warning-800: #92400e;
+$color-warning-900: #78350f;
+
+// Danger/Error
+$color-danger-50: #fef2f2;
+$color-danger-100: #fee2e2;
+$color-danger-200: #fecaca;
+$color-danger-300: #fca5a5;
+$color-danger-400: #f87171;
+$color-danger-500: #ef4444;
+$color-danger-600: #dc2626;
+$color-danger-700: #b91c1c;
+$color-danger-800: #991b1b;
+$color-danger-900: #7f1d1d;
+
+// Info
+$color-info-50: #eff6ff;
+$color-info-100: #dbeafe;
+$color-info-500: #3b82f6;
+$color-info-700: #1d4ed8;
+$color-info-900: #1e3a8a;
+
+// Modern color variables for professional UI
+$color-dark-base: #1a1f36; // Darker sidebar background
+$color-dark-surface: #252d47; // Lighter elements in dark mode
+$color-dark-highlight: #2e3650; // Hover states in dark mode
+$color-dark-border: rgba(255, 255, 255, 0.1);
+
+$color-surface: #f8fafc;
+$color-surface-alt: #ffffff;
+$color-border: #e2e8f0;
+$color-primary: #4f46e5; // Indigo as primary color
+$color-primary-dark: #4338ca;
+$color-primary-light: #818cf8;
+$color-accent: #06b6d4; // Cyan as accent color
+$color-highlight: #1e293b;
+$color-soft-highlight: #f1f5f9;
+$color-success: #10b981;
+$color-warning: #f59e0b;
+$color-danger: #ef4444;
+$color-muted: #64748b;
+$color-shadow: rgba(15, 23, 42, 0.08);
+
+// Code syntax highlighting colors
+$color-code-bg: #f8f9fc; // Light attractive background for code
+$color-code-text: #1e293b; // Default text color
+$color-code-comment: #64748b; // Comments
+$color-code-keyword: #8b5cf6; // Keywords (purple)
+$color-code-function: #0891b2; // Functions (cyan)
+$color-code-string: #16a34a; // Strings (green)
+$color-code-number: #f59e0b; // Numbers (amber)
+$color-code-operator: #ef4444; // Operators (red)
+$color-code-class: #0284c7; // Classes (blue)
+$color-code-variable: #6366f1; // Variables (indigo)
+$color-code-tag: #db2777; // HTML/XML tags (pink)
+$color-code-attr: #d97706; // HTML/XML attributes (amber)
+$color-code-punctuation: #6b7280; // Punctuation
+
+// ===== Spacing System =====
+// Base unit: 4px (0.25rem)
+$space-unit: 0.25rem;
+$space-0: 0; // 0
+$space-1: $space-unit * 1; // 0.25rem / 4px
+$space-2: $space-unit * 2; // 0.5rem / 8px
+$space-3: $space-unit * 3; // 0.75rem / 12px
+$space-4: $space-unit * 4; // 1rem / 16px
+$space-5: $space-unit * 6; // 1.5rem / 24px
+$space-6: $space-unit * 8; // 2rem / 32px
+$space-7: $space-unit * 10; // 2.5rem / 40px
+$space-8: $space-unit * 12; // 3rem / 48px
+$space-9: $space-unit * 16; // 4rem / 64px
+$space-10: $space-unit * 20; // 5rem / 80px
+
+// Legacy spacing variables (for backward compatibility)
+$space-xs: $space-1;
+$space-sm: $space-2;
+$space-md: $space-4;
+$space-lg: $space-6;
+$space-xl: $space-9;
+
+// ===== Border Radius =====
+$radius-none: 0;
+$radius-sm: 0.25rem; // 4px
+$radius-md: 0.5rem; // 8px
+$radius-lg: 1rem; // 16px
+$radius-xl: 1.5rem; // 24px
+$radius-full: 9999px; // For pills and circles
+
+// ===== Typography =====
+// Font Families
+$font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// Font Sizes (modular scale - 1.25)
+$text-xs: 0.75rem; // 12px
+$text-sm: 0.875rem; // 14px
+$text-base: 1rem; // 16px (browser default)
+$text-lg: 1.125rem; // 18px
+$text-xl: 1.25rem; // 20px
+$text-2xl: 1.5rem; // 24px
+$text-3xl: 1.875rem; // 30px
+$text-4xl: 2.25rem; // 36px
+$text-5xl: 3rem; // 48px
+$text-6xl: 3.75rem; // 60px
+
+// Line Heights
+$leading-none: 1;
+$leading-tight: 1.25;
+$leading-snug: 1.375;
+$leading-normal: 1.5;
+$leading-relaxed: 1.625;
+$leading-loose: 2;
+
+// Letter Spacing
+$tracking-tighter: -0.05em;
+$tracking-tight: -0.025em;
+$tracking-normal: 0;
+$tracking-wide: 0.025em;
+$tracking-wider: 0.05em;
+$tracking-widest: 0.1em;
+
+// Legacy typography variables (for backward compatibility)
+$font-family-base: $font-sans;
+$font-size-base: $text-base;
+$font-size-lg: $text-lg;
+$font-size-sm: $text-sm;
+
+// ===== Shadows =====
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+$shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+// ===== Transitions =====
+$transition-default: all 0.2s ease-in-out;
+$transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast: all 0.1s ease-in-out;
+
+// ===== Z-Index =====
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+$z-index-toast: 1080;
+
+// ===== Breakpoints =====
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// ===== Container Widths =====
+$container-sm: $breakpoint-sm;
+$container-md: $breakpoint-md;
+$container-lg: $breakpoint-lg;
+$container-xl: $breakpoint-xl;
+$container-2xl: $breakpoint-2xl;

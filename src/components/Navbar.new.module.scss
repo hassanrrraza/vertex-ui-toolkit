@@ -1,0 +1,183 @@
+@import '../styles/_variables.scss';
+
+// Navbar container
+.navbar {
+  background: #2c3e7e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+}
+
+// Container for navbar content
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Logo section
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoCircle {
+  background: #3b82f6;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoText {
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.brand {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+// Navigation section
+.navSection {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  
+  &:hover {
+    color: white;
+  }
+}
+
+// Action section
+.actionSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.getStartedButton {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background: #2563eb;
+  }
+}
+
+// Mobile toggle
+.toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: none;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+// Mobile menu
+.mobileMenu {
+  display: none;
+}
+
+// Mobile styles
+@media (max-width: 768px) {
+  .navSection, .actionSection {
+    display: none;
+  }
+  
+  .toggle {
+    display: block;
+  }
+  
+  .mobileMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #2c3e7e;
+    padding: 1rem;
+    display: none;
+    
+    &.show {
+      display: block;
+    }
+  }
+  
+  .mobileNavList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .mobileNavItem {
+    margin: 0.5rem 0;
+  }
+  
+  .mobileNavLink {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    display: block;
+  }
+}

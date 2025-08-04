@@ -1,0 +1,49 @@
+@import '../styles/_variables.scss';
+
+.tooltip-demo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+.tooltip-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+.vertex-tooltip-trigger {
+  position: relative;
+  background: $color-primary;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.vertex-tooltip-trigger:focus {
+  outline: 2px solid $color-accent;
+}
+.vertex-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 120%;
+  transform: translateX(-50%);
+  background: $color-surface-alt;
+  color: $color-highlight;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.98rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px $color-shadow;
+  transition: opacity 0.18s, visibility 0.18s;
+  z-index: 20;
+} 

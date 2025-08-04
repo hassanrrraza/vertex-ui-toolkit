@@ -1,0 +1,79 @@
+.vertex-breadcrumbs {
+  margin-bottom: 1rem;
+}
+
+.vertex-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+.vertex-breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.vertex-breadcrumb-link {
+  color: #384E77;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.vertex-breadcrumb-link:hover {
+  color: #2d3e5f;
+  background: #f5f7ff;
+  text-decoration: underline;
+}
+
+.vertex-breadcrumb-link:focus {
+  outline: 2px solid #8BBEB2;
+  outline-offset: 2px;
+}
+
+.vertex-breadcrumb-separator {
+  color: #666;
+  margin: 0 0.5rem;
+  user-select: none;
+}
+
+.vertex-breadcrumb-current {
+  color: #666;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+}
+
+.vertex-breadcrumb-item--current {
+  pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .vertex-breadcrumb-list {
+    font-size: 0.75rem;
+  }
+  
+  .vertex-breadcrumb-separator {
+    margin: 0 0.25rem;
+  }
+  
+  .vertex-breadcrumb-link,
+  .vertex-breadcrumb-current {
+    padding: 0.125rem 0.25rem;
+  }
+}
+
+/* Alternative styles */
+.vertex-breadcrumbs--compact .vertex-breadcrumb-link,
+.vertex-breadcrumbs--compact .vertex-breadcrumb-current {
+  padding: 0.125rem 0.25rem;
+}
+
+.vertex-breadcrumbs--compact .vertex-breadcrumb-separator {
+  margin: 0 0.25rem;
+}

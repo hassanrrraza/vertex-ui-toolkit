@@ -1,0 +1,72 @@
+.vertex-accordion {
+  border: 1px solid #e0e6ed;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.vertex-accordion-item {
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.vertex-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.vertex-accordion-header {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0D0630;
+  transition: background 0.2s ease;
+}
+
+.vertex-accordion-header:hover {
+  background: #f8f9fa;
+}
+
+.vertex-accordion-header--active {
+  background: #f5f7ff;
+  color: #384E77;
+}
+
+.vertex-accordion-header:focus {
+  outline: 2px solid #8BBEB2;
+  outline-offset: -2px;
+}
+
+.vertex-accordion-icon {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #666;
+  transition: transform 0.2s ease;
+}
+
+.vertex-accordion-header--active .vertex-accordion-icon {
+  transform: rotate(180deg);
+  color: #384E77;
+}
+
+.vertex-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.vertex-accordion-content--open {
+  max-height: 200px;
+}
+
+.vertex-accordion-body {
+  padding: 1rem 1.25rem;
+  color: #666;
+  line-height: 1.6;
+  background: #fafbfc;
+}

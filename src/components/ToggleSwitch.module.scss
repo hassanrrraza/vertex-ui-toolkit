@@ -1,0 +1,55 @@
+@import '../styles/_variables.scss';
+
+.toggle-demo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+.toggle-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+.vertex-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+.vertex-toggle input[type="checkbox"] {
+  display: none;
+}
+.vertex-toggle-slider {
+  width: 2.5rem;
+  height: 1.3rem;
+  background: $color-surface-alt;
+  border-radius: 1rem;
+  position: relative;
+  transition: background 0.2s;
+  box-shadow: 0 1px 4px $color-shadow;
+}
+.vertex-toggle input[type="checkbox"]:checked + .vertex-toggle-slider {
+  background: $color-primary;
+}
+.vertex-toggle-slider::before {
+  content: '';
+  position: absolute;
+  left: 0.2rem;
+  top: 0.18rem;
+  width: 1rem;
+  height: 1rem;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 4px $color-shadow;
+}
+.vertex-toggle input[type="checkbox"]:checked + .vertex-toggle-slider::before {
+  transform: translateX(1.2rem);
+}
+.vertex-toggle-label {
+  font-size: 1rem;
+  color: $color-highlight;
+} 
