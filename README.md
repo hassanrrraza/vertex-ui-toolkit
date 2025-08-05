@@ -5,6 +5,8 @@
 <!-- Hero Image -->
 <img src="https://raw.githubusercontent.com/hassanrrraza/vertex-ui-toolkit/main/public/vertex-hero-banner.png" alt="Vertex UI Toolkit - Modern React Components" width="100%" style="max-width: 800px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" />
 
+</div>
+
 <br><br>
 
 ![Vertex UI Toolkit](https://img.shields.io/badge/Vertex-UI%20Toolkit-4f46e5?style=for-the-badge&logo=react&logoColor=white)
