@@ -2,16 +2,17 @@
 
 <div align="center">
 
+<!-- Hero Image -->
+<img src="https://raw.githubusercontent.com/hassanrrraza/vertex-ui-toolkit/main/public/vertex-hero-banner.png" alt="Vertex UI Toolkit - Modern React Components" width="100%" style="max-width: 800px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" />
+
+<br><br>
+
 ![Vertex UI Toolkit](https://img.shields.io/badge/Vertex-UI%20Toolkit-4f46e5?style=for-the-badge&logo=react&logoColor=white)
 ![React](https://img.shields.io/badge/React-19.1.0-61dafb?style=for-the-badge&logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7.0.4-646cff?style=for-the-badge&logo=vite&logoColor=white)
 ![SCSS](https://img.shields.io/badge/SCSS-Modular-cf649a?style=for-the-badge&logo=sass&logoColor=white)
 
 **Modern, accessible, and copy-ready React components for rapid development**
-
-[🚀 Live Demo](https://your-demo-url.com) • [📖 Documentation](https://your-docs-url.com) • [🎯 Examples](https://your-examples-url.com)
-
-</div>
 
 ---
 
